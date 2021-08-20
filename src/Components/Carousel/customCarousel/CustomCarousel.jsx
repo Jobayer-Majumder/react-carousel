@@ -2,10 +2,11 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import { cardData } from '../CardData/CardData'
 import CarouselCard from '../CarouselCard/CarouselCard'
-
+import { settings } from "../CarouselSetting/CarouselSetting";
+import img from '../../../images/Basic-Circle.svg'
 
 export default class CustomCarousel extends Component {
 
@@ -16,37 +17,22 @@ export default class CustomCarousel extends Component {
     }
     next() {
         this.slider.slickNext();
-    }
+    };
+
     previous() {
         this.slider.slickPrev();
-    }
+    };
+
     render() {
-        const settings = {
-            dots: false,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            cssEase: "linear",
-            responsive: [
-                {
-                    breakpoint: 678,
-                    settings: {
-                        dots: false,
-                        infinite: true,
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        cssEase: "linear"
-                    }
-                }
-            ]
-        };
         return (
             <div>
-                <div className="container mx-auto border p-3">
+                <div className="container mx-auto p-3">
                     <div className="grid grid-cols-3 py-4">
                         <div className="col-span-2 flex space-x-4 items-center font-bold">
-                            <button className="px-5 py-1 bg-red-400 text-white rounded"> Live</button>
+                            <button className="pr-4 pl-3 py-1 bg-red-400 text-white rounded">
+                                <img src={img} alt="" className='w-2 inline mr-2' />
+                                LIVE
+                            </button>
                             <p>Upcoming Live Coaching</p>
                         </div>
                         <div className="flex space-x-4 md:space-x-6 justify-end items-center">
